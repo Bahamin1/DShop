@@ -159,7 +159,9 @@ shared ({ caller }) actor class Shop() = this {
   public shared func canisterDepositPrincipal() : async Text {
     let account = Principal.fromActor(this);
 
-    return EthUtils.principalToBytes32(account);
+    let id = EthUtils.principalToBytes32(account);
+
+    return Text.toUppercase(id);
   };
 
   // Get all products
@@ -324,8 +326,9 @@ shared ({ caller }) actor class Shop() = this {
         };
 
         let principal = await canisterDepositPrincipal();
+        let log_principal = Text.toUppercase(log.topics[2]);
 
-        if (log.topics[2] != principal) {
+        if (log_principal != principal) {
           Debug.trap("Principal does not match");
         };
 
