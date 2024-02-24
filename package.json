@@ -45,5 +45,17 @@
     "vite": "^4.3.9",
     "vite-plugin-environment": "^1.1.3",
     "vitest": "^0.32.2"
-  }
+  },
+  "description": "## Overview",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/rvanasa/vite-react-motoko.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rvanasa/vite-react-motoko/issues"
+  },
+  "homepage": "https://github.com/rvanasa/vite-react-motoko#readme"
 }

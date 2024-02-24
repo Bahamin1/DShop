@@ -1,25 +1,25 @@
+import Array "mo:base/Array";
+import Blob "mo:base/Blob";
 import Buffer "mo:base/Buffer";
+import Debug "mo:base/Debug";
 import Hash "mo:base/Hash";
+import HashMap "mo:base/HashMap";
 import Int "mo:base/Int";
 import Iter "mo:base/Iter";
+import Nat "mo:base/Nat";
 import Nat64 "mo:base/Nat64";
+import Nat8 "mo:base/Nat8";
 import Principal "mo:base/Principal";
 import Result "mo:base/Result";
 import Text "mo:base/Text";
 import Time "mo:base/Time";
-import HashMap "mo:base/HashMap";
-import Blob "mo:base/Blob";
-import Nat "mo:base/Nat";
-import Debug "mo:base/Debug";
-import Array "mo:base/Array";
-import Nat8 "mo:base/Nat8";
 
+import ckEth "ckEth";
+import ckEthMinter "ckEthMinter";
+import EthUtils "EthUtils";
+import EvmRpc "EvmRpc";
 import Hex "Hex";
 import Types "Types";
-import ckEth "ckEth";
-import EvmRpc "EvmRpc";
-import EthUtils "EthUtils";
-import ckEthMinter "ckEthMinter";
 
 shared ({ caller }) actor class Shop() = this {
   stable var owner : Principal = caller;
