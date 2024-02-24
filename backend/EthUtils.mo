@@ -1,12 +1,13 @@
-import Text "mo:base/Text";
-import Debug "mo:base/Debug";
-import Nat "mo:base/Nat";
-import Nat8 "mo:base/Nat8";
 import Array "mo:base/Array";
-import Nat64 "mo:base/Nat64";
-import Principal "mo:base/Principal";
 import Blob "mo:base/Blob";
 import Buffer "mo:base/Buffer";
+import Debug "mo:base/Debug";
+import Nat "mo:base/Nat";
+import Nat64 "mo:base/Nat64";
+import Nat8 "mo:base/Nat8";
+import Principal "mo:base/Principal";
+import Text "mo:base/Text";
+
 import Hex "Hex";
 
 module EthUtils {
@@ -22,11 +23,7 @@ module EthUtils {
       buffer.add(0);
     };
 
-    return "0x0a" # Hex.encode(
-      Buffer.toArray(
-        buffer
-      )
-    );
+    return "0x0a" # Hex.encode(Buffer.toArray(buffer));
   };
 
   public func hexToNat(hex : Text) : Nat64 {

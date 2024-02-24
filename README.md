@@ -48,7 +48,18 @@ This DShop(decentralized shop) empower users to create their own shops with a hi
 - **TODO**: Provides an intuitive and user-friendly interface for both shop owners and customers.
 - Ensures a smooth shopping experience with minimal technical barriers.
 
+<<<<<<< HEAD
 # Live Canister
+=======
+## DShop introduction
+
+![Dshopintro1](<assets/Dshop%20Intro%20(01).png>)
+![Dshopintro2](<assets/Dshop%20Intro%20(02).png>)
+![Dshopintro3](<assets/Dshop%20Intro%20(03).png>)
+![Dshopintro4](<assets/Dshop%20Intro%20(04).png>)
+
+## Live Canister
+>>>>>>> 7280c03 (Update README)
 
 [Dshop](https://a4gq6-oaaaa-aaaab-qaa4q-cai.raw.icp0.io/?id=wvhjn-caaaa-aaaao-a3fwa-cai)
 
@@ -91,15 +102,19 @@ npm run setup
 ![txEvent](assets/transactionEvent.png)
 ![pay](assets/pay.png)
 
-8. The Minter will transfer ckETH tokens into the shop.
+8. Confirmed Transaction and u can take your Reciept.
+
+![getReciept](assets/recipet.png)
+
+9. The Minter will transfer ckETH tokens into the shop.
 
 ![ckEthbalance](assets/ckEthBalance.png)
 
-9. Shop owner can transfer ckETH tokens to other users.
+10. Shop owner can transfer ckETH tokens to other users.
 
 ![ckEthTransfer](assets/ckEthTransfer.png)
 
-10. Also, Shop owner can withdraw Ether dirctly from the minter contract into his wallet.
+11. Also, Shop owner can withdraw Ether dirctly from the minter contract into his wallet.
 
 ![ckEthApprove](assets/ckEthApprove.png)
 

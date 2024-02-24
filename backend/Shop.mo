@@ -24,8 +24,8 @@ import Types "Types";
 shared ({ caller }) actor class Shop() = this {
   stable var owner : Principal = caller;
 
-  public shared func getOwner() : async Principal {
-    return owner;
+  public shared func getcaller() : async Principal {
+    return caller;
   };
 
   public shared ({ caller }) func setOwner(newOwner : Principal) : async Result.Result<Principal, Text> {
