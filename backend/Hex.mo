@@ -8,10 +8,10 @@
  */
 
 import Array "mo:base/Array";
-import Iter "mo:base/Iter";
-import Option "mo:base/Option";
-import Nat8 "mo:base/Nat8";
 import Char "mo:base/Char";
+import Iter "mo:base/Iter";
+import Nat8 "mo:base/Nat8";
+import Option "mo:base/Option";
 import Result "mo:base/Result";
 
 module {
@@ -21,8 +21,22 @@ module {
   private let base : Nat8 = 0x10;
 
   private let symbols = [
-    '0', '1', '2', '3', '4', '5', '6', '7',
-    '8', '9', 'A', 'B', 'C', 'D', 'E', 'F',
+    '0',
+    '1',
+    '2',
+    '3',
+    '4',
+    '5',
+    '6',
+    '7',
+    '8',
+    '9',
+    'A',
+    'B',
+    'C',
+    'D',
+    'E',
+    'F',
   ];
 
   /**
@@ -36,9 +50,13 @@ module {
    * Encode an array of unsigned 8-bit integers in hexadecimal format.
    */
   public func encode(array : [Nat8]) : Text {
-    Array.foldLeft<Nat8, Text>(array, "", func (accum, w8) {
-      accum # encodeW8(w8);
-    });
+    Array.foldLeft<Nat8, Text>(
+      array,
+      "",
+      func(accum, w8) {
+        accum # encodeW8(w8);
+      },
+    );
   };
 
   /**
@@ -60,13 +78,19 @@ module {
         do ? {
           let c1 = next()!;
           let c2 = next()!;
-          Result.chain<Nat8, Nat8, DecodeError>(decodeW4(c1), func (x1) {
-            Result.chain<Nat8, Nat8, DecodeError>(decodeW4(c2), func (x2) {
-                #ok (x1 * base + x2);
-            })
-          })
+          Result.chain<Nat8, Nat8, DecodeError>(
+            decodeW4(c1),
+            func(x1) {
+              Result.chain<Nat8, Nat8, DecodeError>(
+                decodeW4(c2),
+                func(x2) {
+                  #ok(x1 * base + x2);
+                },
+              );
+            },
+          );
         },
-        #err (#msg "Not enough input!"),
+        #err(#msg "Not enough input!"),
       );
     };
     var i = 0;
@@ -83,7 +107,7 @@ module {
         };
       };
     };
-    #ok (Array.freeze<Nat8>(array));
+    #ok(Array.freeze<Nat8>(array));
   };
 
   /**
@@ -92,10 +116,10 @@ module {
   private func decodeW4(char : Char) : Result<Nat8, DecodeError> {
     for (i in Iter.range(0, 15)) {
       if (symbols[i] == char) {
-        return #ok (Nat8.fromNat(i));
+        return #ok(Nat8.fromNat(i));
       };
     };
     let str = "Unexpected character: " # Char.toText(char);
-    #err (#msg str);
+    #err(#msg str);
   };
 };
