@@ -3,7 +3,6 @@ import Blob "mo:base/Blob";
 import Buffer "mo:base/Buffer";
 import Debug "mo:base/Debug";
 import Nat "mo:base/Nat";
-import Nat64 "mo:base/Nat64";
 import Nat8 "mo:base/Nat8";
 import Principal "mo:base/Principal";
 import Text "mo:base/Text";
@@ -26,7 +25,7 @@ module EthUtils {
     return "0x0a" # Hex.encode(Buffer.toArray(buffer));
   };
 
-  public func hexToNat(hex : Text) : Nat64 {
+  public func hexToNat(hex : Text) : Nat {
     var upperHex = Text.toUppercase(hex);
 
     let hexArray = switch (Text.startsWith(upperHex, #text "0X")) {
@@ -57,7 +56,7 @@ module EthUtils {
           nat := nat * 256 + Nat8.toNat(byte);
         };
 
-        return Nat64.fromNat(nat);
+        return (nat);
       };
     };
   };
