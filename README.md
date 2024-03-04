@@ -52,6 +52,16 @@ This DShop(decentralized shop) empower users to create their own shops with a hi
 
 [Dshop](https://a4gq6-oaaaa-aaaab-qaa4q-cai.raw.icp0.io/?id=wvhjn-caaaa-aaaao-a3fwa-cai)
 
+## Technical Visually Introduction
+
+![logo](<assets/DshopIntro(01).png>)
+
+![Dshop](<assets/DshopIntro(02).png>)
+
+![Visually](<assets/DshopIntro(03).png>)
+
+![todo](<assets/DshopIntro(04).png>)
+
 ## Usage
 
 1. Start the local Internet Computer environment using:
@@ -81,7 +91,7 @@ npm run setup
 6.  Users can add products to the cart and proceed to checkout.
 
 ![addToCart](assets/addtoCart.png)
-![getCart](assets/getCart.png)
+![getCart][def]
 ![checkout](assets/checkout.png)
 
 7. Users can intract with minter contract using thier wallet on the Ethereum network to this principal id.
@@ -108,3 +118,5 @@ npm run setup
 ![ckEthApprove](assets/ckEthApprove.png)
 
 ![ethWithdraw](assets/ethWithdraw.png)
+
+[def]: assets/getCart.png
